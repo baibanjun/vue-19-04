@@ -8,7 +8,16 @@ export default [
 		component: Home,
 		props:route => ({
 			food:route.query.food //路由参数传值，即 ?food=123
-		})
+		}),
+		beforeEnter:(to,from,next) => {  //路由独享前置守卫
+			if(from.name === 'login') alert('这是从登录页来的')
+			next() //必须执行next()才能跳转
+		},
+		meta:{   //配置路由元数据
+			title:'Home',
+			need_login:true  //可以在这里进行登录权限配置
+		}
+		
 	},
 	{
 		path: '/about',
@@ -19,6 +28,9 @@ export default [
 		component: () => import(/* webpackChunkName: "about" */ '@/views/About.vue'),
 		props:{
 			food:'banana' //对象模式传值
+		},
+		meta:{
+			title:'关于'
 		}
 	},
 	{
