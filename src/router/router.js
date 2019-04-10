@@ -69,10 +69,15 @@ export default [
 		name:'login',
 		component: () => import('@/views/login.vue')
 	},
+	{
+		path:'/store',
+		component: () => import('@/views/store.vue')
+	},
 	//history找不到时404
 	{
 		path:'*',
 		component: () => import('@/views/error_404.vue')
 	}
+	
 	
 ]

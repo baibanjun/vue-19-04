@@ -4,13 +4,24 @@
       <router-link to="/">Home</router-link> |
       <router-link to="/about">About</router-link>
     </div>
-    <router-view/>
-		<router-view name="email"/>
-		<router-view name="tel"/>
+		<transition-group name="xx"> <!--多个组件需要动效，使用transition-group -->
+			<router-view key="default"/>
+			<router-view key="email" name="email"/>
+			<router-view key="tel" name="tel"/>
+		</transition-group>
   </div>
 </template>
 
 <style lang="less">
+.xx-enter{
+	opacity: 0;
+}
+.xx-enter-active{
+	transition: opacity 1s ease;
+}
+.xx-enter-to{
+	opacity: 1;
+}
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
