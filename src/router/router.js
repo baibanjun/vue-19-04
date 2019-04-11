@@ -73,6 +73,10 @@ export default [
 		path:'/store',
 		component: () => import('@/views/store.vue')
 	},
+	{
+		path:'/email',
+		component: () => import('@/views/email.vue')
+	},
 	//history找不到时404
 	{
 		path:'*',
