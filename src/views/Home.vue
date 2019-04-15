@@ -24,8 +24,8 @@ export default {
 		}
 	},
 	beforeRouteEnter(to,from,next){ //组件内前置守卫
-		console.log(to.name)
-		console.log(from.name)
+// 		console.log(to.name)
+// 		console.log(from.name)
 		next()
 	},
 	beforeRouteLeave(to,form,next){ //页面即将离开的时候调用
