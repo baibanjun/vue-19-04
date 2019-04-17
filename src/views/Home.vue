@@ -29,7 +29,8 @@ export default {
 		next()
 	},
 	beforeRouteLeave(to,form,next){ //页面即将离开的时候调用
-		const leave = confirm('确定要离开此页面?')
+		// const leave = confirm('确定要离开此页面?')
+		const leave = true
 		if(leave) next()
 		else next(false)
 	},

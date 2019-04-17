@@ -2,7 +2,9 @@
   <div id="app">
     <div id="nav">
       <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+      <router-link to="/about">About</router-link> |
+			<router-link to="/store">store</router-link> |
+			<router-link to="/argu">argu</router-link>
     </div>
 		<transition-group name="xx"> <!--多个组件需要动效，使用transition-group -->
 			<router-view key="default"/>
