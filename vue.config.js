@@ -15,7 +15,7 @@ module.exports = {
 	//打包时不生成.map文件,减小体积，加快速度
 	productionSourceMap: false,
 	devServer:{
-		proxy:'http://localhost:4000'
+		proxy:'http://localhost:4000'  //设置请求代理
 	}
 }
 

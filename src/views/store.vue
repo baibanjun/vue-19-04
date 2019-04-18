@@ -2,6 +2,7 @@
 	<div>
 		<h2>store page</h2>
 		<div class="table_box">
+			<p>双向绑定 data_1:<input type="text" v-model="data_1"></p>
 			<table>
 				
 				<tr>
@@ -39,13 +40,20 @@
 			...mapState({
 				appName: state => state.appName,
 				userName: state => state.user.userName,
-				data_1: state => state.data_1,
 				data_2: state => state.data_2
 			}),
 			...mapGetters([
 				'appNameWithVersion',
 				'firstLetter'
 			]),
+			data_1:{  //计算属性方式运行双向绑定，也可以单独用:value和@input运行双向绑定
+				get(){
+					return this.$store.state.data_1
+				},
+				set(value){ //以新值为参数
+					this.set_data_1({new_data:value})
+				}
+			} ,
 			//没有...mapState或者...mapGetters展开时用下面的方法
 // 			appNameWithVersion(){
 // 				return this.$store.getters.appNameWithVersion
