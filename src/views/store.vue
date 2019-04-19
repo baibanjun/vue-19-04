@@ -98,7 +98,7 @@
 	}
 </script>
 
-<style>
+<style scoped>
 	.table_box{
 		text-align: center;
 	}
