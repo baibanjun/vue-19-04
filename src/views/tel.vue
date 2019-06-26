@@ -1,6 +1,6 @@
 <template>
 	<div>
-		<p>{{ message }}</p>
+		<p>内容显示:{{ message }}</p>
 	</div>
 </template>
 
@@ -11,8 +11,8 @@
 				message:''
 			}
 		},
-		mounted(){
-			this.$bus.$on('on-click',mes =>{
+		mounted(){ //在实例创建后监听click-1事件
+			this.$bus.$on('click-1',mes =>{ //监听 自定义事件名 click-1
 				this.message = mes
 			})
 		}

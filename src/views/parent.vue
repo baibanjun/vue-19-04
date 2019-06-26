@@ -1,7 +1,7 @@
 <template>
 	<div>
 		I am parent
-		<router-view/>
+		<p><router-view/></p>
 	</div>
 </template>
 

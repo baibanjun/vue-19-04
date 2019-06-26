@@ -37,7 +37,7 @@ export default [
 		path:'/argu/:xxx',
 		name:'argu',
 		component: () => import('@/views/argu.vue'),
-		props:true  //布尔模式传值
+		props:true  //布尔模式传值，当true时需匹配xxx属性值，否则路由404
 	},
 	//嵌套路由
 	{
@@ -47,6 +47,10 @@ export default [
 			{
 				path:'child',
 				component: () => import('@/views/child.vue')
+			},
+			{
+				path:'child_1',
+				component: () => import('@/views/child_1.vue')
 			}
 		]
 	},

@@ -1,7 +1,6 @@
 <template>
 	<div>
 		<input type="text" @input="handleClick" v-model="msg"/>
-		{{ msg }}
 	</div>
 </template>
 
@@ -9,7 +8,7 @@
 	export default {
 		data(){
 			return {
-				msg:'33'
+				msg:''
 			}
 		},
 		mounted(){
@@ -19,7 +18,7 @@
 		methods:{
 			handleClick:function(){
 				var _self = this
-				_self.$bus.$emit('on-click',_self.msg)
+				_self.$bus.$emit('click-1',_self.msg) //在$bus实例上触发click-1事件，在tel.vue中监听该事件名，事件名自定义。
 			}
 		}	
 	}

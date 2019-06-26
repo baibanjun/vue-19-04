@@ -6,6 +6,7 @@ import {setTitle} from '@/lib/util'
 Vue.use(Router)
 
 const router = new Router({
+	mode:'history',//history路由模式 默认hash
 	routes
 })
 
@@ -46,7 +47,3 @@ router.afterEach((to,from) =>{   //后置钩子函数
 
 
 export default router
-// export default new Router({
-// 	// mode:'history',  //history路由模式 默认has
-//   routes
-// })

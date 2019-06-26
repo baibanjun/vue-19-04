@@ -3,6 +3,8 @@
 		<h2>store page</h2>
 		<div class="table_box">
 			<p>双向绑定 data_1:<input type="text" v-model="data_1"></p>
+			<p>组件双向绑定 data_3:<a-input v-model="data_3"/></p>
+			<p>显示data_3组件:<a-show :content="data_3"/></p>
 			<table>
 				
 				<tr>
@@ -34,8 +36,15 @@
 
 <script>
 	import {mapState,mapGetters,mapMutations,mapActions} from 'vuex'
+	import AInput from "_c/AInput.vue"
+	import AShow from '_c/AShow.vue'
 	export default {
 		name:'store',
+		data(){
+			return{
+				data_3:''
+			}
+		},
 		computed:{
 			...mapState({
 				appName: state => state.appName,
@@ -65,6 +74,10 @@
 // 				return this.$store.state.user.userName
 // 			}
 			
+		},
+		components:{
+			AInput,
+			AShow
 		},
 		methods:{
 			...mapMutations([

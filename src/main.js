@@ -5,7 +5,7 @@ import store from './store'
 import Bus from './lib/bus'
 
 Vue.config.productionTip = false
-Vue.prototype.$bus = Bus
+Vue.prototype.$bus = Bus //将Bus注入到Vue实例
 
 new Vue({
   router,
